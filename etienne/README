@@ -1,0 +1,214 @@
+
+Last update : October 03, 2013
+=====================================================================
+
+
+-) Procedures: 
+
+	# ~/proj/etienne/		(parent_dir)
+
+	make_paths.m : Sets up all the needed path to functions,
+	procedures and data files.
+	
+	startup_vars.m : Generates the array containing the names of the
+	variables. A useful way to keep track of them.
+
+	startup_thres.m : Selects the soil-saturation threshold for
+	trimming lakes, glaciers and other saturated grid boxes.
+
+	startup_full.m : General startup fill for all MATLAB script
+	folders. Trims variables to summer only, remove non-land values,
+	removes high-latitudes data points, trims saturated grid boxes
+	and calls anomaly_full.m
+	
+	startup_other.m : Holds on to a selected variable and calls
+	startup_full.m again for a different data set.
+
+	getnetcdf.m : Extracts main field out of a netCDF file and checks for
+	time correspondence with already-extracted fields.
+
+	getnewvar.m : Automates the extraction of a "new" variable. Calls
+	getnetcdf.m then proceeds as in startup_full.m.
+
+	summer_only.m : Truncates input arrays in time to include only
+	"summer" months for NH and SH grid points. 
+	
+	land_only.m : Trims to land only excluding ocean, lake and glacier
+	(high latitudes) and saturated grid boxed. Uses the criterion set in
+	startup_crit.m
+
+	anomaly.m : Computes Xbar, XX and sig_X of variable X(Ntime,Nlat,Nlon).
+	That is, the clim. monthly means Xbar(Nmonth,lat,lon), deviations for
+	it XX(Ntime,Nlat,Nlon) and the clim. monthly standard deviations 
+	sig_X OR variance Var_X (both Nmonth,Nlat,Nlon)
+
+	anomaly_full.m : Computes climatology for the extracted variable
+	using anomaly.m. Moreover (it needed) computes every parameter
+	needed for Toy Model calculations.
+
+	anomly_sig.m : Computes sig_X from XX using anomaly.m. Useful
+	for regression residuals like F0F0 and H0H0.
+	
+	anomly_Var.m : Computes the variance of X from XX using anomaly.m. 
+	Useful when Var_X is considered a better scaling than sig_X.
+
+	corr_inst.m : Computes the monthly instantaneous correlations of a
+	pair of variables. Uses anomaly.m
+
+	cova_inst.m : Computes the monthly instantaneous covariances of a 
+	pair of variables. Uses anomaly.m
+
+	corr_lag.m : Computes the month-to-month lagged correlations of a
+	pair of variables. The "wrap-around" problem is not addressed.
+	Correlations are computed for specific month couplets NOT for given
+	lags distance.
+
+	cova_lag.m : Computes the month-to-month lagged correlations of a
+	pair of variables. As with corr_lag.m, the "wrap-around" problem is
+	not addressed.
+	
+	corr_autolag.m : Same as corr_lag.m but for one variable with
+	itself, the autolagged correlation.
+	
+	cova_autolag.m : Same as cova_lag.m but for one variable with
+	itself, the autolagged covariance.
+
+	regrs.m : Computes the (orthogonal) projection of one 3D field 
+	onto another. Both the regression coefficient and the (orthogonal)
+	residual are outputted. 
+
+	ddt.m : Computes time derivative using the 1st-order forward in time
+	FDA. Here too, the warp-around problem is not addressed.
+
+	param_evapo.m : Computes the toy model parameterization of the
+	evapotranspiration field.
+
+	param_damp.m : Computes the toy model parameterization of the
+	surface energy damping (Flw+Hs).
+
+	param_smres.m : Compute the toy model parameterization of the soil
+	moisture budget residual (P'-E'-R').
+
+	tm_param2.m : (Obsolete) Compute all toy model parameterizations.
+	Updated notation as of 06/13 (gamma's and nu's).
+
+	tm_param_full.m : Compute all toy model parameterizations as well 
+	as Var(T) and Var(m). Updated scheme of 06/17.
+
+	locations.m	: Specifies coordinates of different location around the
+	globe requires for time series and scatter plot analysis. Uses
+	locs_add.m
+
+	locs_add.m : Converts longitude/latitude coordinate pairs into
+	indices of the model's longitude and latitude vectors.
+
+	box_regions.m : Define location 'boxes' for time series analysis.
+
+	box_avg.m : Performs an area average around 'box' given by its
+	SW and NE corners.
+
+	box_cat.m : Concatenate every grid point inside 'box' given by its
+	SW and NE corners.
+
+=====================================================================
+	
+-) MATLAB script folders:
+
+	# .obsolete/ 
+	Out-dated procedures.
+	
+	# my_plots/
+	Plotting procedures are found here.
+
+	# my_shortcuts/
+	Some very handy MATLAB shortcuts.
+	
+	# toy_model
+	Verifying the toy model expression for Var_T and Var_m.
+	Scale analysis of the different terms. GCMs correction using the toy
+	mdoel ... and more.
+
+	# valid_to_obs/
+	Comparison of the (summer) surface temperature variance (and seasonal
+	mean) in the GCMs with observations for the U. of Delaware data banks.
+
+	# distributions/
+	Distributions (mean and varibility) of surface energy and soil
+	moisture budget variables.
+
+	# correlations/
+	Correlations including instantaneous correlations of two variables,
+	auto-lagged and paired-lagged.
+	
+	# scales/ 
+	Scale analysis of the different terms in the surface energy and soil
+	moisture budgets.
+
+	# balances/
+	Do they toy model equations balance with subjected to various
+	assumptions? Time mean and anomaly versions of the budget equations
+	are validated.
+	
+	# regressions/
+	Regressions, multiple regressions, analysis of residuals.
+	
+	# seasonal_cycle/
+	Analysis of seasonal trends (i.e. from June to July to August) in
+	the variables.
+	
+	# timeseries/
+	Plots various time series of different fields for specific
+	locations. 
+
+	# scatter/
+	Verifying the proposed parameterizations of the Toy Model via
+	various scatter plots.
+	
+	# decompositions/
+	Analysis of the variable decompositions in the toy model 
+	equations. Investigation of the importance of the seasonal cycle,
+	linearity and relative variability.
+
+	# cmip5_obs/
+	Check if the summertime variability problem has been 'fixed' in the
+	latest generation GCMs.
+
+	# scenarios/
+	Soil moisture and surface air temperature in the 2069-2099 SRES A1B
+	scenario.
+
+=====================================================================
+
+-) Global MATLAB variables:
+
+	global.mat : where "global" variables such as the data fields
+	temporal and spatial resolution are stored. This facilitates 
+	function calling. Set in ./startup_full.m.
+
+	plotting.mat : universal plotting options. Set in ./make_paths.m. 
+
+=====================================================================
+
+-) Shell scripts:
+
+	clear_figs.sh : Clears all figures stored in
+	./*/figs/*.eps (or *.png) and ./*/figs/*/archives/
+	to free up disk space. 
+
+	make_folder.sh : Automates MATLAB script folder mkdir.
+
+	worldmap.sh : Uses gnuplot to get longitude/latitude coordinates
+	on the world map (using ./worldmap.dat).
+
+	switch_dataset.sh : Changes the MATLAB `model_name' variable in the
+	./$folder/startup.m files.
+
+	~/bin/newfigs.sh : Open the latest $N .png figures in the current
+	directory with Eyes of Gnome.
+
+	thesis_figs.sh : remake all figures included in thesis.
+
+=====================================================================
+
+
+======================================================================

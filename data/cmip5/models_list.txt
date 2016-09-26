@@ -1,0 +1,73 @@
+
+List of CMIP5 models used for ensembles
+
+
+I used every data file in 
+
+/home/disk/eos10/dargan/cmip5/historical/tas/2d/
+
+except the GISS runs (something was wrong with the year labeling)
+
+----------------------------------------------------------------------
+
+- 65 model runs
+
+- 25 models
+
+- 12 insitutes
+
+----------------------------------------------------------------------
+
+Full list:
+
+# ACCESS (CSIRO, Australia), 1 member
+
+# CCSM4, 6 members
+
+# CNRM CM5, 10 members
+
+# CSIRO Mk3, 1 member
+
+# CanESM2, 5 members
+
+# GFDL CM3, 1 member
+
+# GFDL ESM2G, 1 member
+
+# GFDL ESM2M, 1 member
+
+# HadCM3, 4 member
+
+# HadGEM2-AO, 1 member
+
+# HadGEM2-CC, 1 member
+
+# HadGEM2-ES, 4 members
+
+# ISPL-CM5A-LR, 4 members
+
+# MIROC-ESM-CHEM, 1 member
+
+# MIROC-ESM, 1 member
+
+# MIROC4h, 1 member 
+
+# MIROC5, 1 member
+
+# MPI-ESM-LR, 1 member
+
+# MPI-ESM-MR, 3 members
+
+# MPI-ESM-P, 2 members
+
+# MRI-CGCM3, 5 members
+
+# NorESM1-ME, 1 member
+
+# NorESM1_M, 3 members
+
+# bcc-csm1-1, 3 members
+
+# inmcm4, 1 member
+
+----------------------------------------------------------------------

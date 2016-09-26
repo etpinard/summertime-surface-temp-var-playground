@@ -1,0 +1,20 @@
+
+Last Updated : April 09, 2013
+
+in ~/proj/etienne/seasonal_cycle 
+
+  Compute (using mainly ssn_rg.m) and plots seasonal cycle ranges
+  of various fields.
+
+in ./state_vars/
+
+  land-atmosphere state variable (T,m) 
+  include Obs. data set for T.
+
+in ./tm_coeffs/
+
+  toy model coefficients 
+
+in ./
+
+=====================================================================

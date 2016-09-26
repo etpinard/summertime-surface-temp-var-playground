@@ -1,0 +1,40 @@
+
+Last update : January 28, 2013
+
+in ~/proj/etienne/timeseries/
+
+Generates various timeseries at specific locations imported from
+locations.m. 
+
+Notation: consistent with plot_ts.m and plot_ts_locs.m
+					plotting output are referred to as 
+					$model_name_{hist_,}ts$ilocs_$fieldinquestion.{eps,png}.
+
+
+-) ts_vars.m generates timeseries of the "main" variables 
+	 found in $vars (c.f. anomaly_full.m) accompanied by 
+	 their respective monthly climatological means.
+	
+-) ts_anoms.m generates timeseries of the anomalies of the "main" 
+	 variables found in $vars (again c.f. anomaly_full.m) accompanied
+	 by their respective standard deviations.
+
+-) gam_and_psi.m generates timeseries of the two toy model forcing 
+	 functions.
+
+-) evapofrac.m  
+
+
+---------------------------------------------------------------------
+
+	Obsolete procedures, now in obsolete/
+
+-) time_series.m computes anomalies and climatology. Using ts_plot.m,
+	 it outputs the time series of interest.
+
+-) ts_corr.m computes correlations between anomalies as a time series.
+	 Use ts_corr_plot.m for plotting purposes.
+
+	*** ts_plot.m , ts_plot2.m and ts_corr_plot need to be updated 
+			to incorporate plot_print.m as in runoff/ts_plot.m
+======================================================================

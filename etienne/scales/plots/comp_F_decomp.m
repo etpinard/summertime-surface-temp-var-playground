@@ -1,0 +1,43 @@
+% $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+%% Run startup.m and DO NOT clear variables
+% $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+%
+% comp_F_decomp.m
+%
+% --> plot_comp_datasets.m <--
+%
+% Compares the relative contribution of P' in F' in the 4 datasets.
+%
+% ======================================================================
+
+%name_add = '';
+out_format = 'png';
+out_format = 'eps';
+opt_frame_col = 0;
+opt_overlay = 0;
+units = '[-]';
+
+vars_req = {'lon','lat', ...
+            'F_decomp','alpha_L'};
+
+% alpha, not scaled by L here
+comp_cmd = [ ...
+  'F_decomp = (alpha.^2.*sig_P.^2)./sig_F0.^2;' ...
+  'alpha_L = alpha/L;' ...
+];
+
+case_cmd = [ ...
+  'case 1;' ...
+  'cvec = [0,0.1,0.25,0.5,0.8,1,1.25,2,4,10];' ...
+  'opt_x_cvec = ''above'';' ...
+  'color_handle = @color_scale;' ...
+  'case 2;' ...
+  'cvec = [0,0.1,0.2,0.3,0.4,0.5,0.6];' ...
+  'opt_x_cvec = ''add_both'';' ...
+  'color_handle = @color_coeffs;' ...
+];
+% ----------------------------------------------------------------------
+
+%% Call plot_comp_datasets.m
+plot_comp_datasets;
+% ----------------------------------------------------------------------

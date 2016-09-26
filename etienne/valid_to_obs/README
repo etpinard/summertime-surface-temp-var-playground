@@ -1,0 +1,37 @@
+
+Last Updated : April 02, 2013
+
+in ~/proj/etienne/model_Var_check 
+
+  Comparison of the surface temperature and precipitation in the GCMs
+  and 20th century observations for the U. of Delaware data banks.
+
+  Observation data files are in ~/proj/data/obs/
+
+  model_T_dist.m : sig_T and Tbar observations 
+  distributions for comparisons.
+
+  model_T_bias.m : Var(T) and Tbar check with observations in
+  summer.
+
+  model_T_bias_winter.m : same but for winter.
+
+  model_P_bias.m : Var(P) and Pbar check with obs. in summer.
+
+  model_T_bias_detrend.m : same as model_T_bias.m but with detrended
+  GCM and observations.
+
+  model_T_bias_strung.m : same as model_T_bias.m but the a "strung
+  together" data set.
+
+ 
+in ./get_obs/
+
+  A series of procedures for extracting the observation data.
+
+in  ./plots/
+
+  model_and_obs.m compares model and observation sig_T in a 3 panal
+  figure.
+
+======================================================================

@@ -1,0 +1,101 @@
+
+Last update : June 13, 2013
+
+in ~/proj/etienne/toy_model/
+
+Toy model Var(T) (or sig_T) computations, scale analysis
+and bias attribution.
+
+As of 03/13, our bias metric is the relative errors computed
+using bias.m.
+
+
+-) tm_param.m computes parameterization parameters and residual
+	 for E' , H' , R', xiU' and xim'. This procedure is meant to be
+	 always evolving as we find new ways to improve our parameterization 
+	 schemes (hence why it is not included in startup.m).
+
+	 tm_param2.m updated toy model parameterization. (06/12) still a 
+	 work in progress. (06/13) now in ~/proj/etienne/
+
+	 tm_param_skin.m re-computes parameterization parameters using the
+	 skin temperature instead of the 2 meter temperature.
+
+	 tm_param_skin.m re-computes parameterization parameters P' instead
+	 of m'.
+
+-) tm_$date.m compute the toy model Var_T and Var_m of version $date
+	 and its bias relative to Var_T and Var_m respectively.
+
+	 tm_feb06.m (outdated ... )
+	 tm_mar15.m (includes param on xiU' and xim').
+	 tm_mar15_Tsk.m (using T(skin)).
+	 tm_P_for_m_$date.m (using P' for m')
+
+----------------------------------------------------------------------
+
+in ./build/ (based on ./old/tm_H_GCM.m and ./old/tm_m_GCM.m)
+
+Examine the toy model bias following each parameterizations; hence,
+building the toy model "from the ground up" using progressively less
+GCM output variables.
+ 
+Nomenclature: bld_$X_$y.m  
+	where $X=T refers to the surface energy budget ,
+	$X=m to the soil moisture budget 
+	and $y to the term(s) or particular technique in question.
+
+As of 03/19, some bld_T_* procedures have been adapted for T(skin).
+
+*** Also some procedures need to be updated to include plotting/
+subroutines.
+----------------------------------------------------------------------
+
+in ./coeffs/
+
+Toy model coefficients distributions.
+
+-) coef_sfc_engy.m : surface energy budget coefficients.
+-) coef_sfc_engy_skin.m : same but now using T(skin).
+-) coef_soil_mois.m : soil moisture budget coefficients.
+-) coef_coupling.m : coupling coefficients.
+-) coef_coupling_skin.m : same but now using T(skin).
+
+----------------------------------------------------------------------
+
+in ./checks/
+
+Various scale analysis checks. 
+
+-) check_$date.m compares relative magnitudes of the terms
+	 composing Var_T and Var_m of $date version of the Toy Model.
+
+-) sc_$date.m scatter plots analysis of toy model biases.
+
+----------------------------------------------------------------------
+
+in ./plotting/
+
+Plotting subroutines.
+
+-) plot_tm_bias_{T,m}.m computes relative bias w.r.t. {Var(T),Var(m)} 
+	 of GCM using bias.m and plots results using plot_summeravg.m.
+
+-) plot_tm_sig_{T,m}.m plots {sig_T,sig_m} directly in {K,mm}.
+
+-) plot_tm_sig_{T,m}_diff.m plots difference of toy model
+	 {sig_T,sig_m} to {sig_T,sig_m} of GCM. 
+
+----------------------------------------------------------------------
+
+in ./plots/
+
+Targeted multi-panel plots.
+
+----------------------------------------------------------------------
+
+in ./old/
+
+old blocks of code for reference.
+
+======================================================================

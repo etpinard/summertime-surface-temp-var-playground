@@ -1,0 +1,67 @@
+
+Last Updated : April 17, 2013
+
+in ~/proj/etienne/regressions 
+
+	Computes regressions between the variables that we seek to
+	parameterize in the toy model equations, namely E', H' and R'.
+	Optimal regressing variables are looked for using ratio of the
+	regression residual. 
+
+Notation: Regression functions are denoted as regrs_""". 
+					Residual ratios are denoted by
+					Res_$var_before$var_after(i){,$var_after(ii)} (for multiple
+					regressions).
+
+
+in ./subroutines/		
+
+-) regrs_single.m performs single regressions (i.e. one variable at a
+	 time) and computes the ratio of the residual.
+	
+-) regrs_multiple.m performs succesive (or multiple) regressions and
+	 computes the ratio of the 2nd residual.
+
+-) regrs_single_plot.m plotting procedures for regrs_single.m
+
+-) regrs_single_multiple.m plotting procedures for regrs_multiple.m
+
+---------------------------------------------------------------------
+
+in ./plots/
+
+-)	plot_H_param.m : plot_3panels with sig_H/sig_F , 
+		Var(H_0)/Var(H) , Var(H_00)/Var(H) .
+	
+-)  plot_E_param.m : same but for E.
+
+----------------------------------------------------------------------
+
+-) evapo{,_multiple}.m seeks the best parameterization for E, the
+	 evapotranspiration using single {or multiple} regressions.
+
+-) evapofrac.m investigates whether parameterizing the evaporative
+	 fraction would give us better results than simply E'.
+
+-) bowen.m investigates whether parameterizing the bowen ratio
+	 would give us better results than simply E'.
+
+-) dampimg{,_multiple}.m seeks the best parameterization for H, the
+	 surface energy damping term.
+
+-) runoff.m seeks the best parameterization for R, the soil moisture
+	 runoff term (need to figure out which of mrro or mrros is
+	 important). Form the looks, only 1 regression will be sufficient
+	 for most locations.
+
+-) sensible.m compares the relative contribution of the sensible heat
+	 term Hs in H w.r.t to the Planck term.
+
+-) budget_residual seeks the best parameterization for xi_U' and xi_m'
+	 the 2 budget residual functions.
+
+-) residual_bias.m investigates if the regression residuals (i.e. the
+	 rejections) have a bias w.r.t. their original variables. 
+	 USELESS! This will never be the case when projecting anomalies.
+
+=====================================================================

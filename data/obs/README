@@ -1,0 +1,49 @@
+
+Last update : April 10, 2013
+=====================================================================
+
+-) In ~/proj/data/obs/
+  
+  download.sh : wget script.
+
+  udel_1969-1999.sh : trim observations to monthly 1969-1999 time
+  period (as we did for the GCMs), but leave to high resolution.
+  ***Problem: how to trim to land-only in this case?
+
+  udel_interp.sh : interpolates the high resolution data set down to 
+  the resolution (both temporal and spatial) 
+  corresponding to both the CCSM 3.0 and the HadGEM1.
+
+-) In ~/nobackup/data/obs/
+   
+  air.mon.mean.v301.nc : taken from
+  http://www.esrl.noaa.gov/psd/data/gridded/data.UDel_AirT_Precip.html
+  0.5x0.5 from 1900 to 2010 (`cdo showyear $infile') monthly
+  surface air temperature from the U. of Delaware observation data set.
+  [in degC]
+  
+  precip.mon.total.v301.nc : taken from
+  http://www.esrl.noaa.gov/psd/data/gridded/data.UDel_AirT_Precip.html
+  0.5x0.5 from 1900 to 2010 monthly total (yes total) 
+  precip from the U. of
+  Delaware observation data set. [in cm]
+
+
+  udel_tas_1969-1999_256x128.cdf : observational surface temperature
+  corresponding to the CCSM 3.0 archives. [in degC]
+	
+  udel_tas_1969-1999_192x145.cdf : observational surface temperature
+  corresponding to the HadGEM1 archives. [in degC]
+
+  udel_p_1969-1999_$Nlonx$Nlat.cdf : correspondingly for precip. [cm]
+
+
+  *** Maybe I should try to convert these in K and mm/s ***
+
+
+-) In ~/proj/data/obs/old
+
+  obsolete procedure(s).
+
+
+=====================================================================

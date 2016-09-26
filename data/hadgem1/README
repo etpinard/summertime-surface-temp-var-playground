@@ -1,0 +1,67 @@
+
+Last update : May 07, 2013
+=====================================================================
+
+Information about the data and its variables
+	
+-) In ~/nobackup/data/hadgem1
+
+	All files have 192 grid points in longitudes and 145 in latitude
+	There are the monthly averaged data set from January 1969 to
+	December 1999 for a total of 372 time samples or 31 complete years.
+	The variables are stored as var(time,lat,lon). The lon vector ranges
+	in [0:360] in degrees east. The lat vector is expressed in degrees
+	north.
+
+	# The files are:
+
+	tas.cdf : Surface air temperature (2m) in Kelvin.
+
+	ts.cdf : Surface (skin) temperature in Kelvin.
+	
+	ta.cdf : 3D air temperature in Kelvins at 16 pressure levels.
+
+
+	hfss.cdf : Surface upward sensible heat flux in W m^-2.
+	
+	hfls.cdf : Surface upward latent heat flux in W m^-2.
+
+
+	mrso.cdf : Total soil moisture content in kg m^-2.  
+
+	mrsos.cdf : Moisture in upper 0.1 m of soil column in kg m^-2.
+
+	mrro.cdf : Surface and subsurface runoff flux in kg m^-2 s^-1.
+
+	mrros.cdf : Surface Runoff flux (top 0.1 m) in mm s^-1.
+
+
+	pr.cdf : Precipitation flux in kg m^2 s^-1. 
+
+	prc.cdf : Convective precipitation flux in kg m^2 s^-1.
+
+
+	rlds.cdf : Surface downwelling longwave flux in air in W m^-2.
+
+	rlus.cdf : Surface upwelling longwave flux in air in W m^-2.
+
+	rsds.cdf : Surface downwelling shortwave flux in air in W m^-2.
+	
+	rsus.cdf : Surface upwelling shortwave flux in air in W m^-2.
+
+
+	snw.cdf : Surface snow where land in kg m^-2.
+
+	mrfso.cdf : Soil frozen water (full column) content in kg m^-2.
+
+	
+	uas.cdf : Zonal surface wind in m/s (+ for eastward)
+
+	vas.cdf : Meridional surface wind in m/s (+ for northward)
+
+	Uas.cdf Surface wind speed in m/s 
+	(computed and interpolated from uas.cdf and vas.cdf 
+	 with ./get_Uas.sh). 
+
+
+=====================================================================

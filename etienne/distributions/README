@@ -1,0 +1,67 @@
+
+Last update : May 07, 2013
+
+in ~/proj/etienne/distributions2/
+	(find a better name ...)
+
+The second generation distribution code that now uses 
+../anomaly.m to generate X = Xbar + X' with Xbar a function of month
+
+
+-) check_saturation.m seeks the best way to trim saturated and
+	 completely dry grid boxes for startup_crit.m
+
+-) dist_means.m plots Xbar for all variables in $vars.
+	 That is, all "natural" variable of the toy model:
+	 (T,m,F, ... but not psi, gamma ...)
+
+-) dist_stds.m same as dist_means but now for sig_X.
+
+-) dist_forcs.m computes statistics of the two forcing functions (i.e.
+	 their stds), and verifies the relative magnitude of the parameters
+	 lambda, alpha and beta. 
+	 --- NEEDS A REBRUSH! but very valuable. 
+	 --- Should I put this here or in regressions/
+
+-) coeff_var.m computes the coefficient of variation of all variables
+	 natural (good) and derived (to do!).
+
+-) regimes.m seeks to best way to define to the two regimes of
+	 evaporation control (refer to correlations patterns in
+	 correlations/{control_E,param_E}).
+
+-) dist_varsfull.m computes statistics of the missing vars_full
+	 (i.e. Hs, 4 radiation terms) variables.
+
+-) issummer.m "verifies" that summer is indeed JJA (DJF) using
+	 cumulative distribution functions for each summer month.
+	 --- NEEDS A REBRUSH! but very valuable.
+
+-) monthzero.m has everything month zero related (May or Nov.):
+	 it loads and cleans data, computes and plot the ratio of 
+	 month zero to the summer mean.
+	 --- NEEDS A REBRUSH! but very valuable.
+	
+-) snow.m presents the snow related variables.
+
+-) bowen.m evaluates the bowen ratio both in clim. mean and anomalies.
+
+-) winter_only.m computes some selected statistics (including some
+	 correlations) for the winter months. 
+
+-) spring_only.m computes some selected statistics for the spring
+	 months.
+
+-) which_T.m compares the distributions of the surface air temperature
+	 (tas.cdf) and the surface skin temperature (ts.cdf).
+
+-) aero_resistance.m evaluate the spatial and temporal variability
+	 of the aerodynamic resistance by approx. using T(2m)-T(skin).
+
+----------------------------------------------------------------------
+
+in ./plots/
+
+-)
+
+======================================================================

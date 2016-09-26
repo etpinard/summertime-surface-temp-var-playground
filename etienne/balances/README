@@ -1,0 +1,25 @@
+
+Last Updated : March 11, 2013
+
+in ~/proj/etienne/balances 
+
+	Computes budget residuals (surface energy and soil moisture) and
+	evaluates their respective magnitudes
+
+
+	-) sfc_engy.m Does the surface energy budget balance?
+
+	-) soil_mois.m Does the soil moisture budget balance?
+
+	-) bot_mois.m		DO THIS eventually ...
+
+	-) param_xiU.m Now adding a parameterized xi_U in the surface energy
+		 budget?
+
+	-) param_xim.m Now adding a parameterized xi_m in the soil moisture
+		 budget?
+
+	-) param_residual Can we bound the combined residual 
+		 L*E_00' + H_00' ?
+
+=====================================================================

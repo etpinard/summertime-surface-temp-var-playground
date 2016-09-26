@@ -1,0 +1,60 @@
+
+Last update : March 28, 2013
+
+in ~/proj/etienne/scatter/
+
+Verifying the proposed dependence relationship, such as 
+parameterizations of the Toy Model, via various scatter plots.
+
+
+-) evapofrac.m computes and plots the evaporation fraction 
+	 (LE/F) as a function of soil moisture as well as other 
+	 combinaisons involving E, F and {m,m_b} at specific locations.
+	 Uses plot_scatter_locs.m for plotting.
+	 
+-) runoff.m computes Also, contains the same
+	 manipulations for the trio of R, P and m.
+
+-) regimes.m seeks to best way to define to the two evaporation 
+	 regimes using scatter plots over all grid boxes.
+
+-) param_E.m plots E' as a function of his its parameterization
+	 with m and F_0' (see regressions/) to determine residual (E_00')
+	 behavior ... among other things.
+
+-) param_H similar to param_E.m but now for H' the temperature
+	 damping term.
+
+
+-) evapofrac_full.m is similar to evapofrac.m but for every grid 
+	 point of the globe. Uses plot_scatter_full.m for plotting.
+	 --- Not bad, not your best code but good
+	
+-) coeff_var.m computes the coeff. of variation of temperature 
+	 and plots it against the mean soil moisture content as a scatter 
+	 plot for all land grid points.
+	 --- Needs a brush up, but valuable!
+
+
+in ./params/
+
+	paramaterized vs. unparameterized scatter plots at $locs.
+
+
+in ./coeffs/
+
+	toy model coefficients vs. mean state variables.
+
+in ./sensitivity/
+
+	sensitivity metrics vs. mean state variables.
+
+---------------------------------------------------------------------
+
+	Obsolete procedures, now in obsolete/
+
+-) computing_e_r.m 
+
+-) evapofrac_b.m 
+
+====================================================================

@@ -1,0 +1,755 @@
+netcdf hfls {
+dimensions:
+	lon = 192 ;
+	lat = 94 ;
+	time = UNLIMITED ; // (252 currently)
+	tbnds = 2 ;
+variables:
+	float lon(lon) ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	float lat(lat) ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:bounds = "time_bnds" ;
+		time:units = "hours since 1800-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	double time_bnds(time, tbnds) ;
+		time_bnds:units = "hours since 1800-01-01 00:00:00" ;
+		time_bnds:calendar = "standard" ;
+	float hfls(time, lat, lon) ;
+		hfls:long_name = "Monthly Mean of Latent Heat Net Flux at Surface" ;
+		hfls:standard_name = "surface_upward_latent_heat_flux" ;
+		hfls:units = "W/m^2" ;
+		hfls:grid_type = "gaussian" ;
+		hfls:_FillValue = -32767.f ;
+		hfls:valid_range = -32765, 15634 ;
+		hfls:unpacked_valid_range = -2420., 2420. ;
+		hfls:actual_range = -265.776672363281, 618.1484375 ;
+		hfls:precision = 1 ;
+		hfls:least_significant_digit = 0 ;
+		hfls:GRIB_id = 121 ;
+		hfls:GRIB_name = "LHTFL" ;
+		hfls:var_desc = "Latent Heat Net Flux" ;
+		hfls:dataset = "NCEP/DOE AMIP-II Reanalysis (Reanalysis-2) Monthly Averages" ;
+		hfls:level_desc = "Surface" ;
+		hfls:statistic = "Mean" ;
+		hfls:parent_stat = "Individual Obs" ;
+		hfls:cell_methods = "time: mean (of each 6-hourly interval) mean (monthly of 6-hourly means)" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Mon May 13 14:38:34 2013: cdo -b 32 selyear,1979/1999 hfls.cdf /tmp/cdo_O\n",
+			"Mon May 13 14:37:42 2013: cdo -b 32 chname,lhtfl,hfls lhtfl.cdf hfls.cdf\n",
+			"Mon May 13 14:31:55 2013: cdo -b 32 invertlat lhtfl.cdf /tmp/cdo_O\n",
+			"created 2002/03 by Hoop (netCDF2.3)" ;
+		:institution = "National Centers for Environmental Prediction" ;
+		:title = "Monthly NCEP/DOE Reanalysis 2" ;
+		:comments = "Data is from \n",
+			"NCEP/DOE AMIP-II Reanalysis (Reanalysis-2)\n",
+			"(4x/day).  Data interpolated from model (sigma) surfaces to gaussian grid." ;
+		:platform = "Model" ;
+		:references = "http://wesley.wwb.noaa.gov/reanalysis2/\n",
+			"http://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis2.html" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf hfss {
+dimensions:
+	lon = 192 ;
+	lat = 94 ;
+	time = UNLIMITED ; // (252 currently)
+	tbnds = 2 ;
+variables:
+	float lon(lon) ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	float lat(lat) ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:bounds = "time_bnds" ;
+		time:units = "hours since 1800-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	double time_bnds(time, tbnds) ;
+		time_bnds:units = "hours since 1800-01-01 00:00:00" ;
+		time_bnds:calendar = "standard" ;
+	float hfss(time, lat, lon) ;
+		hfss:long_name = "Monthly Mean of Sensible Heat Net Flux at Surface" ;
+		hfss:standard_name = "surface_upward_sensible_heat_flux" ;
+		hfss:units = "W/m^2" ;
+		hfss:grid_type = "gaussian" ;
+		hfss:_FillValue = -32767.f ;
+		hfss:valid_range = -32765, 32765 ;
+		hfss:unpacked_valid_range = -1100., 5453. ;
+		hfss:actual_range = -763.06787109375, 825.260803222656 ;
+		hfss:precision = 1 ;
+		hfss:least_significant_digit = 0 ;
+		hfss:GRIB_id = 122 ;
+		hfss:GRIB_name = "SHTFL" ;
+		hfss:var_desc = "Sensible Heat Net Flux" ;
+		hfss:dataset = "NCEP/DOE AMIP-II Reanalysis (Reanalysis-2) Monthly Averages" ;
+		hfss:level_desc = "Surface" ;
+		hfss:statistic = "Mean" ;
+		hfss:parent_stat = "Individual Obs" ;
+		hfss:cell_methods = "time: mean (of each 6-hourly interval) mean (monthly of 6-hourly means)" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Mon May 13 14:38:42 2013: cdo -b 32 selyear,1979/1999 hfss.cdf /tmp/cdo_O\n",
+			"Mon May 13 14:37:32 2013: cdo -b 32 chname,shtfl,hfss shtfl.cdf hfss.cdf\n",
+			"Mon May 13 14:32:38 2013: cdo -b 32 invertlat shtfl.cdf /tmp/cdo_O\n",
+			"created 2002/03 by Hoop (netCDF2.3)" ;
+		:institution = "National Centers for Environmental Prediction" ;
+		:title = "Monthly NCEP/DOE Reanalysis 2" ;
+		:comments = "Data is from \n",
+			"NCEP/DOE AMIP-II Reanalysis (Reanalysis-2)\n",
+			"(4x/day).  Data interpolated from model (sigma) surfaces to gaussian grid." ;
+		:platform = "Model" ;
+		:references = "http://wesley.wwb.noaa.gov/reanalysis2/\n",
+			"http://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis2.html" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf mrros {
+dimensions:
+	lon = 192 ;
+	lat = 94 ;
+	time = UNLIMITED ; // (252 currently)
+	tbnds = 2 ;
+variables:
+	float lon(lon) ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	float lat(lat) ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:bounds = "time_bnds" ;
+		time:units = "hours since 1800-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	double time_bnds(time, tbnds) ;
+		time_bnds:units = "hours since 1800-01-01 00:00:00" ;
+		time_bnds:calendar = "standard" ;
+	float mrros(time, lat, lon) ;
+		mrros:long_name = "surface runoff flux" ;
+		mrros:units = "mm s-1" ;
+		mrros:grid_type = "gaussian" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Mon May 13 14:38:50 2013: cdo -b 32 selyear,1979/1999 mrros.cdf /tmp/cdo_O\n",
+			"Mon May 13 14:36:52 2013: ncatted -O -a units,mrros,o,c,mm s-1 mrros.cdf\n",
+			"Mon May 13 14:36:52 2013: ncatted -O -a long_name,mrros,o,c,surface runoff flux mrros.cdf\n",
+			"Mon May 13 14:36:37 2013: cdo expr,mrros=runof/(30*24*60*60); runof.cdf mrros.cdf\n",
+			"Mon May 13 14:32:25 2013: cdo -b 32 invertlat runof.cdf /tmp/cdo_O\n",
+			"created 2002/03 by Hoop (netCDF2.3)" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf mrsos {
+dimensions:
+	lon = 192 ;
+	lat = 94 ;
+	time = UNLIMITED ; // (252 currently)
+	tbnds = 2 ;
+variables:
+	float lon(lon) ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	float lat(lat) ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:bounds = "time_bnds" ;
+		time:units = "hours since 1800-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	double time_bnds(time, tbnds) ;
+		time_bnds:units = "hours since 1800-01-01 00:00:00" ;
+		time_bnds:calendar = "standard" ;
+	float mrsos(time, lat, lon) ;
+		mrsos:long_name = "soil moisture content of the top 10 cm" ;
+		mrsos:units = "mm" ;
+		mrsos:grid_type = "gaussian" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Mon May 13 14:38:58 2013: cdo -b 32 selyear,1979/1999 mrsos.cdf /tmp/cdo_O\n",
+			"Mon May 13 14:36:36 2013: ncatted -O -a units,mrsos,o,c,mm mrsos.cdf\n",
+			"Mon May 13 14:36:35 2013: ncatted -O -a long_name,mrsos,o,c,soil moisture content of the top 10 cm mrsos.cdf\n",
+			"Mon May 13 14:36:22 2013: cdo expr,mrsos=100*soilw; soilw.cdf mrsos.cdf\n",
+			"Mon May 13 14:36:21 2013: ncks -O -a -x -v level_bnds soilw.cdf soilw.cdf\n",
+			"Mon May 13 14:36:20 2013: ncks -O -a -x -v level soilw.cdf soilw.cdf\n",
+			"Mon May 13 14:33:04 2013: cdo -b 32 invertlat soilw.cdf /tmp/cdo_O\n",
+			"Mon May 13 14:21:32 2013: ncks -O -a -x -v level_bnds soilw.cdf soilw.cdf\n",
+			"Mon May 13 14:21:31 2013: ncks -O -a -x -v level soilw.cdf soilw.cdf\n",
+			"Mon May 13 14:21:29 2013: ncwa -O -a level soilw.cdf soilw.cdf\n",
+			"created 2002/03 by Hoop (netCDF2.3)" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf pr {
+dimensions:
+	lon = 192 ;
+	lat = 94 ;
+	time = UNLIMITED ; // (252 currently)
+	tbnds = 2 ;
+variables:
+	float lon(lon) ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	float lat(lat) ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:bounds = "time_bnds" ;
+		time:units = "hours since 1800-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	double time_bnds(time, tbnds) ;
+		time_bnds:units = "hours since 1800-01-01 00:00:00" ;
+		time_bnds:calendar = "standard" ;
+	float pr(time, lat, lon) ;
+		pr:long_name = "Monthly Mean of Precipitation Rate at Surface" ;
+		pr:standard_name = "precipitation_rate" ;
+		pr:units = "Kg/m^2/s" ;
+		pr:grid_type = "gaussian" ;
+		pr:_FillValue = 32766.f ;
+		pr:valid_range = -32765, 19735 ;
+		pr:unpacked_valid_range = 0., 0.00524999992921948 ;
+		pr:actual_range = 9.98843461275101e-08, 0.00111284502781928 ;
+		pr:precision = 7 ;
+		pr:least_significant_digit = 6 ;
+		pr:GRIB_id = 59 ;
+		pr:GRIB_name = "PRATE" ;
+		pr:var_desc = "Precipitation Rate" ;
+		pr:dataset = "NCEP/DOE AMIP-II Reanalysis (Reanalysis-2) Monthly Averages" ;
+		pr:level_desc = "Surface" ;
+		pr:statistic = "Mean" ;
+		pr:parent_stat = "Individual Obs" ;
+		pr:cell_methods = "time: mean (of each 6-hourly interval) mean (monthly of 6-hourly means)" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Mon May 13 14:39:05 2013: cdo -b 32 selyear,1979/1999 pr.cdf /tmp/cdo_O\n",
+			"Mon May 13 14:37:23 2013: cdo -b 32 chname,prate,pr prate.cdf pr.cdf\n",
+			"Mon May 13 14:32:13 2013: cdo -b 32 invertlat prate.cdf /tmp/cdo_O\n",
+			"created 2002/03 by Hoop (netCDF2.3)" ;
+		:institution = "National Centers for Environmental Prediction" ;
+		:title = "Monthly NCEP/DOE Reanalysis 2" ;
+		:comments = "Data is from \n",
+			"NCEP/DOE AMIP-II Reanalysis (Reanalysis-2)\n",
+			"(4x/day).  Data interpolated from model (sigma) surfaces to gaussian grid." ;
+		:platform = "Model" ;
+		:references = "http://wesley.wwb.noaa.gov/reanalysis2/\n",
+			"http://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis2.html" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf rlds {
+dimensions:
+	lon = 192 ;
+	lat = 94 ;
+	time = UNLIMITED ; // (252 currently)
+	tbnds = 2 ;
+variables:
+	float lon(lon) ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	float lat(lat) ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:bounds = "time_bnds" ;
+		time:units = "hours since 1800-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	double time_bnds(time, tbnds) ;
+		time_bnds:units = "hours since 1800-01-01 00:00:00" ;
+		time_bnds:calendar = "standard" ;
+	float rlds(time, lat, lon) ;
+		rlds:long_name = "Monthly Mean of Downward Longwave Radiation Flux at Surface" ;
+		rlds:standard_name = "surface_downward_longwave_radiation_flux" ;
+		rlds:units = "W/m^2" ;
+		rlds:grid_type = "gaussian" ;
+		rlds:_FillValue = -32767.f ;
+		rlds:valid_range = -32765, -25065 ;
+		rlds:unpacked_valid_range = -135., 635. ;
+		rlds:actual_range = 38.1499824523926, 465.366577148438 ;
+		rlds:precision = 1 ;
+		rlds:least_significant_digit = 0 ;
+		rlds:GRIB_id = 205 ;
+		rlds:GRIB_name = "DLWRF" ;
+		rlds:var_desc = "Downward Longwave Radiation Flux" ;
+		rlds:dataset = "NCEP/DOE AMIP-II Reanalysis (Reanalysis-2) Monthly Averages" ;
+		rlds:level_desc = "Surface" ;
+		rlds:statistic = "Mean" ;
+		rlds:parent_stat = "Individual Obs" ;
+		rlds:cell_methods = "time: mean (of each 6-hourly interval) mean (monthly of 6-hourly means)" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Mon May 13 14:39:13 2013: cdo -b 32 selyear,1979/1999 rlds.cdf /tmp/cdo_O\n",
+			"Mon May 13 14:37:52 2013: cdo -b 32 chname,dlwrf,rlds dlwrf.cdf rlds.cdf\n",
+			"Mon May 13 14:31:29 2013: cdo -b 32 invertlat dlwrf.cdf /tmp/cdo_O\n",
+			"created 2002/03 by Hoop (netCDF2.3)" ;
+		:institution = "National Centers for Environmental Prediction" ;
+		:title = "Monthly NCEP/DOE Reanalysis 2" ;
+		:comments = "Data is from \n",
+			"NCEP/DOE AMIP-II Reanalysis (Reanalysis-2)\n",
+			"(4x/day).  Data interpolated from model (sigma) surfaces to gaussian grid." ;
+		:platform = "Model" ;
+		:references = "http://wesley.wwb.noaa.gov/reanalysis2/\n",
+			"http://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis2.html" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf rlus {
+dimensions:
+	lon = 192 ;
+	lat = 94 ;
+	time = UNLIMITED ; // (252 currently)
+	tbnds = 2 ;
+variables:
+	float lon(lon) ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	float lat(lat) ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:bounds = "time_bnds" ;
+		time:units = "hours since 1800-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	double time_bnds(time, tbnds) ;
+		time_bnds:units = "hours since 1800-01-01 00:00:00" ;
+		time_bnds:calendar = "standard" ;
+	float rlus(time, lat, lon) ;
+		rlus:long_name = "Monthly Mean of Upward Longwave Radiation Flux at Surface" ;
+		rlus:standard_name = "surface_upward_longwave_radiation_flux" ;
+		rlus:units = "W/m^2" ;
+		rlus:grid_type = "gaussian" ;
+		rlus:_FillValue = -32767.f ;
+		rlus:valid_range = -32765, -22566 ;
+		rlus:unpacked_valid_range = -75., 945. ;
+		rlus:actual_range = 76.7386932373047, 555.535522460938 ;
+		rlus:precision = 1 ;
+		rlus:least_significant_digit = 0 ;
+		rlus:GRIB_id = 212 ;
+		rlus:GRIB_name = "ULWRF" ;
+		rlus:var_desc = "Upward Longwave Radiation Flux" ;
+		rlus:dataset = "NCEP/DOE AMIP-II Reanalysis (Reanalysis-2) Monthly Averages" ;
+		rlus:level_desc = "Surface" ;
+		rlus:statistic = "Mean" ;
+		rlus:parent_stat = "Individual Obs" ;
+		rlus:cell_methods = "time: mean (of each 6-hourly interval) mean (monthly of 6-hourly means)" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Mon May 13 14:39:21 2013: cdo -b 32 selyear,1979/1999 rlus.cdf /tmp/cdo_O\n",
+			"Mon May 13 14:38:02 2013: cdo -b 32 chname,ulwrf,rlus ulwrf.cdf rlus.cdf\n",
+			"Mon May 13 14:33:17 2013: cdo -b 32 invertlat ulwrf.cdf /tmp/cdo_O\n",
+			"created 2002/03 by Hoop (netCDF2.3)" ;
+		:institution = "National Centers for Environmental Prediction" ;
+		:title = "Monthly NCEP/DOE Reanalysis 2" ;
+		:comments = "Data is from \n",
+			"NCEP/DOE AMIP-II Reanalysis (Reanalysis-2)\n",
+			"(4x/day).  Data interpolated from model (sigma) surfaces to gaussian grid." ;
+		:platform = "Model" ;
+		:references = "http://wesley.wwb.noaa.gov/reanalysis2/\n",
+			"http://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis2.html" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf rsds {
+dimensions:
+	lon = 192 ;
+	lat = 94 ;
+	time = UNLIMITED ; // (252 currently)
+	tbnds = 2 ;
+variables:
+	float lon(lon) ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	float lat(lat) ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:bounds = "time_bnds" ;
+		time:units = "hours since 1800-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	double time_bnds(time, tbnds) ;
+		time_bnds:units = "hours since 1800-01-01 00:00:00" ;
+		time_bnds:calendar = "standard" ;
+	float rsds(time, lat, lon) ;
+		rsds:long_name = "Monthly Mean of Downward Solar Radiation Flux at Surface" ;
+		rsds:standard_name = "surface_downward_solar_radiation_flux" ;
+		rsds:units = "W/m^2" ;
+		rsds:grid_type = "gaussian" ;
+		rsds:_FillValue = -32767.f ;
+		rsds:valid_range = -32765, -17166 ;
+		rsds:unpacked_valid_range = -190., 1370. ;
+		rsds:actual_range = 0., 462.154846191406 ;
+		rsds:precision = 1 ;
+		rsds:least_significant_digit = 0 ;
+		rsds:GRIB_id = 204 ;
+		rsds:GRIB_name = "DSWRF" ;
+		rsds:var_desc = "Downward Solar Radiation Flux" ;
+		rsds:dataset = "NCEP/DOE AMIP-II Reanalysis (Reanalysis-2) Monthly Averages" ;
+		rsds:level_desc = "Surface" ;
+		rsds:statistic = "Mean" ;
+		rsds:parent_stat = "Individual Obs" ;
+		rsds:cell_methods = "time: mean (of each 6-hourly interval) mean (monthly of 6-hourly means)" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Mon May 13 14:39:30 2013: cdo -b 32 selyear,1979/1999 rsds.cdf /tmp/cdo_O\n",
+			"Mon May 13 14:38:13 2013: cdo -b 32 chname,dswrf,rsds dswrf.cdf rsds.cdf\n",
+			"Mon May 13 14:31:42 2013: cdo -b 32 invertlat dswrf.cdf /tmp/cdo_O\n",
+			"created 2002/03 by Hoop (netCDF2.3)" ;
+		:institution = "National Centers for Environmental Prediction" ;
+		:title = "Monthly NCEP/DOE Reanalysis 2" ;
+		:comments = "Data is from \n",
+			"NCEP/DOE AMIP-II Reanalysis (Reanalysis-2)\n",
+			"(4x/day).  Data interpolated from model (sigma) surfaces to gaussian grid." ;
+		:platform = "Model" ;
+		:references = "http://wesley.wwb.noaa.gov/reanalysis2/\n",
+			"http://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis2.html" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf rsus {
+dimensions:
+	lon = 192 ;
+	lat = 94 ;
+	time = UNLIMITED ; // (252 currently)
+	tbnds = 2 ;
+variables:
+	float lon(lon) ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	float lat(lat) ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:bounds = "time_bnds" ;
+		time:units = "hours since 1800-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	double time_bnds(time, tbnds) ;
+		time_bnds:units = "hours since 1800-01-01 00:00:00" ;
+		time_bnds:calendar = "standard" ;
+	float rsus(time, lat, lon) ;
+		rsus:long_name = "Monthly Mean of Upward Solar Radiation Flux at Surface" ;
+		rsus:standard_name = "surface_upward_shortwave_radiation_flux" ;
+		rsus:units = "W/m^2" ;
+		rsus:grid_type = "gaussian" ;
+		rsus:_FillValue = -32767.f ;
+		rsus:valid_range = -32765, -22866 ;
+		rsus:unpacked_valid_range = -145., 845. ;
+		rsus:actual_range = 0., 382.938720703125 ;
+		rsus:precision = 1 ;
+		rsus:least_significant_digit = 0 ;
+		rsus:GRIB_id = 211 ;
+		rsus:GRIB_name = "USWRF" ;
+		rsus:var_desc = "Upward Solar Radiation Flux" ;
+		rsus:dataset = "NCEP/DOE AMIP-II Reanalysis (Reanalysis-2) Monthly Averages" ;
+		rsus:level_desc = "Surface" ;
+		rsus:statistic = "Mean" ;
+		rsus:parent_stat = "Individual Obs" ;
+		rsus:cell_methods = "time: mean (of each 6-hourly interval) mean (monthly of 6-hourly means)" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Mon May 13 14:39:38 2013: cdo -b 32 selyear,1979/1999 rsus.cdf /tmp/cdo_O\n",
+			"Mon May 13 14:38:23 2013: cdo -b 32 chname,uswrf,rsus uswrf.cdf rsus.cdf\n",
+			"Mon May 13 14:33:29 2013: cdo -b 32 invertlat uswrf.cdf /tmp/cdo_O\n",
+			"created 2002/03 by Hoop (netCDF2.3)" ;
+		:institution = "National Centers for Environmental Prediction" ;
+		:title = "Monthly NCEP/DOE Reanalysis 2" ;
+		:comments = "Data is from \n",
+			"NCEP/DOE AMIP-II Reanalysis (Reanalysis-2)\n",
+			"(4x/day).  Data interpolated from model (sigma) surfaces to gaussian grid." ;
+		:platform = "Model" ;
+		:references = "http://wesley.wwb.noaa.gov/reanalysis2/\n",
+			"http://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis2.html" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf runof {
+dimensions:
+	lon = 192 ;
+	lat = 94 ;
+	time = UNLIMITED ; // (252 currently)
+	tbnds = 2 ;
+variables:
+	float lon(lon) ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	float lat(lat) ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:bounds = "time_bnds" ;
+		time:units = "hours since 1800-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	double time_bnds(time, tbnds) ;
+		time_bnds:units = "hours since 1800-01-01 00:00:00" ;
+		time_bnds:calendar = "standard" ;
+	float runof(time, lat, lon) ;
+		runof:long_name = "Monthly Accumulation of Water Runoff at Surface" ;
+		runof:standard_name = "surface_runoff_amount" ;
+		runof:units = "kg/m^2" ;
+		runof:grid_type = "gaussian" ;
+		runof:_FillValue = -32767.f ;
+		runof:valid_range = -32765, -8265 ;
+		runof:unpacked_valid_range = -25., 220. ;
+		runof:actual_range = 0., 96.5026702880859 ;
+		runof:precision = 2 ;
+		runof:least_significant_digit = 1 ;
+		runof:GRIB_id = 90 ;
+		runof:GRIB_name = "RUNOF" ;
+		runof:var_desc = "Water Runoff" ;
+		runof:dataset = "NCEP/DOE AMIP-II Reanalysis (Reanalysis-2) Monthly Values" ;
+		runof:level_desc = "Surface" ;
+		runof:statistic = "Individual Obs" ;
+		runof:parent_stat = "Other" ;
+		runof:cell_methods = "time: accumulation (for each 6-hourly interval) time: sum (interval: 6 hours to daily) time: mean (interval: 1 day to monthly)" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Mon May 13 14:39:48 2013: cdo -b 32 selyear,1979/1999 runof.cdf /tmp/cdo_O\n",
+			"Mon May 13 14:32:25 2013: cdo -b 32 invertlat runof.cdf /tmp/cdo_O\n",
+			"created 2002/03 by Hoop (netCDF2.3)" ;
+		:institution = "National Centers for Environmental Prediction" ;
+		:title = "Monthly NCEP/DOE Reanalysis 2" ;
+		:comments = "Data is from \n",
+			"NCEP/DOE AMIP-II Reanalysis (Reanalysis-2)\n",
+			"(4x/day).  Data interpolated from model (sigma) surfaces to gaussian grid." ;
+		:platform = "Model" ;
+		:references = "http://wesley.wwb.noaa.gov/reanalysis2/\n",
+			"http://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis2.html" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf soilw {
+dimensions:
+	lon = 192 ;
+	lat = 94 ;
+	time = UNLIMITED ; // (252 currently)
+	tbnds = 2 ;
+variables:
+	float lon(lon) ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	float lat(lat) ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:bounds = "time_bnds" ;
+		time:units = "hours since 1800-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	double time_bnds(time, tbnds) ;
+		time_bnds:units = "hours since 1800-01-01 00:00:00" ;
+		time_bnds:calendar = "standard" ;
+	float soilw(time, lat, lon) ;
+		soilw:long_name = "Monthly Mean of Forecast of Volumetric Soil Moisture between 0-10 cm Below Ground Level" ;
+		soilw:standard_name = "soil_moisture" ;
+		soilw:units = "fraction" ;
+		soilw:grid_type = "gaussian" ;
+		soilw:_FillValue = -32767.f ;
+		soilw:valid_range = -32765, -22765 ;
+		soilw:unpacked_valid_range = 0., 1. ;
+		soilw:actual_range = 0., 0.4226134121418 ;
+		soilw:precision = 4 ;
+		soilw:least_significant_digit = 3 ;
+		soilw:GRIB_id = 144 ;
+		soilw:GRIB_name = "SOILW" ;
+		soilw:var_desc = "Volumetric Soil Moisture" ;
+		soilw:dataset = "NCEP/DOE AMIP-II Reanalysis (Reanalysis-2) Monthly Averages" ;
+		soilw:level_desc = "Between 0-10 cm BGL" ;
+		soilw:statistic = "Individual Obs" ;
+		soilw:parent_stat = "Other" ;
+		soilw:cell_methods = "time: mean (of each 6-hourly interval) mean (monthly of 6-hourly means)" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Mon May 13 14:39:56 2013: cdo -b 32 selyear,1979/1999 soilw.cdf /tmp/cdo_O\n",
+			"Mon May 13 14:36:21 2013: ncks -O -a -x -v level_bnds soilw.cdf soilw.cdf\n",
+			"Mon May 13 14:36:20 2013: ncks -O -a -x -v level soilw.cdf soilw.cdf\n",
+			"Mon May 13 14:33:04 2013: cdo -b 32 invertlat soilw.cdf /tmp/cdo_O\n",
+			"Mon May 13 14:21:32 2013: ncks -O -a -x -v level_bnds soilw.cdf soilw.cdf\n",
+			"Mon May 13 14:21:31 2013: ncks -O -a -x -v level soilw.cdf soilw.cdf\n",
+			"Mon May 13 14:21:29 2013: ncwa -O -a level soilw.cdf soilw.cdf\n",
+			"created 2002/03 by Hoop (netCDF2.3)" ;
+		:institution = "National Centers for Environmental Prediction" ;
+		:title = "Monthly NCEP/DOE Reanalysis 2" ;
+		:comments = "Data is from \n",
+			"NCEP/DOE AMIP-II Reanalysis (Reanalysis-2)\n",
+			"(4x/day).  Data interpolated from model (sigma) surfaces to gaussian grid." ;
+		:platform = "Model" ;
+		:references = "http://wesley.wwb.noaa.gov/reanalysis2/\n",
+			"http://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis2.html" ;
+		:nco_openmp_thread_number = 1 ;
+		:NCO = "20130513" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf tas {
+dimensions:
+	lon = 192 ;
+	lat = 94 ;
+	time = UNLIMITED ; // (252 currently)
+	tbnds = 2 ;
+variables:
+	float lon(lon) ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	float lat(lat) ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:bounds = "time_bnds" ;
+		time:units = "hours since 1800-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	double time_bnds(time, tbnds) ;
+		time_bnds:units = "hours since 1800-01-01 00:00:00" ;
+		time_bnds:calendar = "standard" ;
+	float tas(time, lat, lon) ;
+		tas:long_name = "Monthly Mean of Forecast of Air temperature at 2 m" ;
+		tas:standard_name = "air_temperature" ;
+		tas:units = "degK" ;
+		tas:grid_type = "gaussian" ;
+		tas:_FillValue = -32767.f ;
+		tas:valid_range = -32765, -1765 ;
+		tas:unpacked_valid_range = 120., 430. ;
+		tas:actual_range = 197.623840332031, 313.472625732422 ;
+		tas:precision = 2 ;
+		tas:least_significant_digit = 1 ;
+		tas:GRIB_id = 11 ;
+		tas:GRIB_name = "TMP" ;
+		tas:var_desc = "Air temperature" ;
+		tas:dataset = "NCEP/DOE AMIP-II Reanalysis (Reanalysis-2) Monthly Averages" ;
+		tas:level_desc = "2 m" ;
+		tas:statistic = "Mean" ;
+		tas:parent_stat = "Individual Obs" ;
+		tas:cell_methods = "time: mean (interval: 6 hours to daily) time: mean (interval: 1 day to monthly)" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Mon May 13 14:40:04 2013: cdo -b 32 selyear,1979/1999 tas.cdf /tmp/cdo_O\n",
+			"Mon May 13 14:36:53 2013: cdo -b 32 chname,air,tas air.cdf tas.cdf\n",
+			"Mon May 13 14:36:19 2013: ncks -O -a -x -v level_bnds air.cdf air.cdf\n",
+			"Mon May 13 14:36:18 2013: ncks -O -a -x -v level air.cdf air.cdf\n",
+			"Mon May 13 14:31:16 2013: cdo -b 32 invertlat air.cdf /tmp/cdo_O\n",
+			"Mon May 13 14:21:28 2013: ncks -O -a -x -v level_bnds air.cdf air.cdf\n",
+			"Mon May 13 14:21:25 2013: ncks -O -a -x -v level air.cdf air.cdf\n",
+			"Mon May 13 14:21:24 2013: ncwa -O -a level air.cdf air.cdf\n",
+			"created 2002/03 by Hoop (netCDF2.3)" ;
+		:institution = "National Centers for Environmental Prediction" ;
+		:title = "Monthly NCEP/DOE Reanalysis 2" ;
+		:comments = "Data is from \n",
+			"NCEP/DOE AMIP-II Reanalysis (Reanalysis-2)\n",
+			"(4x/day).  Data interpolated from model (sigma) surfaces to gaussian grid." ;
+		:platform = "Model" ;
+		:references = "http://wesley.wwb.noaa.gov/reanalysis2/\n",
+			"http://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis2.html" ;
+		:nco_openmp_thread_number = 1 ;
+		:NCO = "20130513" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf ts {
+dimensions:
+	lon = 192 ;
+	lat = 94 ;
+	time = UNLIMITED ; // (252 currently)
+	tbnds = 2 ;
+variables:
+	float lon(lon) ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	float lat(lat) ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:bounds = "time_bnds" ;
+		time:units = "hours since 1800-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	double time_bnds(time, tbnds) ;
+		time_bnds:units = "hours since 1800-01-01 00:00:00" ;
+		time_bnds:calendar = "standard" ;
+	float ts(time, lat, lon) ;
+		ts:long_name = "Monthly Mean of Forecast of SST/Land Skin Temperature at the Surface" ;
+		ts:standard_name = "temperature" ;
+		ts:units = "degK" ;
+		ts:grid_type = "gaussian" ;
+		ts:_FillValue = -32767.f ;
+		ts:valid_range = -32765, -1765 ;
+		ts:unpacked_valid_range = 120., 430. ;
+		ts:actual_range = 190.854202270508, 314.540649414062 ;
+		ts:precision = 2 ;
+		ts:least_significant_digit = 1 ;
+		ts:GRIB_id = 11 ;
+		ts:GRIB_name = "TMP" ;
+		ts:var_desc = "Skin Temperature" ;
+		ts:dataset = "NCEP/DOE AMIP-II Reanalysis (Reanalysis-2) Monthly Averages" ;
+		ts:level_desc = "Surface" ;
+		ts:statistic = "Individual Obs" ;
+		ts:parent_stat = "Other" ;
+		ts:cell_methods = "time: mean (monthly of 6-hourly values)" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Mon May 13 14:40:12 2013: cdo -b 32 selyear,1979/1999 ts.cdf /tmp/cdo_O\n",
+			"Mon May 13 14:37:06 2013: cdo -b 32 chname,skt,ts skt.cdf ts.cdf\n",
+			"Mon May 13 14:32:52 2013: cdo -b 32 invertlat skt.cdf /tmp/cdo_O\n",
+			"created 2002/03 by Hoop (netCDF2.3)" ;
+		:institution = "National Centers for Environmental Prediction" ;
+		:title = "Monthly NCEP/DOE Reanalysis 2" ;
+		:comments = "Data is from \n",
+			"NCEP/DOE AMIP-II Reanalysis (Reanalysis-2)\n",
+			"(4x/day).  Data interpolated from model (sigma) surfaces to gaussian grid." ;
+		:platform = "Model" ;
+		:references = "http://wesley.wwb.noaa.gov/reanalysis2/\n",
+			"http://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis2.html" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+

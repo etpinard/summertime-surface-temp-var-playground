@@ -1,0 +1,43 @@
+Brief Description:
+NCEP-DOE Reanalysis 2 is an improved version of the NCEP Reanalysis I
+model pthat fixed errors and updated paramterizations of of physical
+processes
+
+Temporal Coverage:
+monthly values for 1979/01/01 to 2012/12/31 .
+
+Spatial Coverage:
+Global T62 Gaussian grid (192x94).
+88.542N-88.542S, 0E-358.125E
+
+======================================================================
+
+in @datafiles (~/nobackup/data/ncep_doe/)
+
+  Same fields and units (see ./dump_info.txt) as in the GCMs, 
+  Except:
+    
+    -) I did not download the bottom layer moisture
+
+    -) Originally, the soil moisture variable is the "Volumetric water
+    content" [unitless]. Multplying by 100 mm convert it to "soil
+    moisture content" as in the GCMs.
+
+    Note that all fields are X(time,lat,lon) by default!
+
+----------------------------------------------------------------------
+
+./download.sh : mass download from NCEP website
+
+./ncep_doe_rearrange.sh : rearranging the downloaded files'
+variable to match the GCMs' NetCDF files. That is:
+
+1) inverts latitude vectors
+2a) trims vertical level for `air.2m.cdf', `soilw.0-10cm.cdf' 
+2b) trims `bnds' field for all variables
+3a) convert `soilw' to moisture content
+    by simply multiplying by 100 mm.
+3b) convert `runof' to runoff rate    
+4) renames all variables to GCM names
+5) selects time period of interest 
+----------------------------------------------------------------------

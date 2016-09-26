@@ -1,0 +1,46 @@
+
+ERA 40 reanalysis.
+
+======================================================================
+
+in @datafiles (~/nobackup/data/era40/)
+
+dimensions:
+  longitude = 144 ;
+  latitude = 73 ;    // (2.5 x 2.5)
+  time = UNLIMITED ; // (372 steps, Jan69 to Dec99 like for both GCMs)
+
+soil moisture layer:
+  
+  7 and 21 cm.
+
+  Ref:
+  http://www.mi.uni-hamburg.de/fileadmin/files/forschung/theomet/docs/pdf/2009-Wang_Dol_Ble_Frae-TAC.pdf
+
+
+----------------------------------------------------------------------
+
+Before importing data into MATLAB:
+
+1) download data at http://apps.ecmwf.int/datasets/data/era40_moda/
+   as a lone output file named `output.nc'.
+
+2) move `output.nc' to ~/nobackup/data/era40/
+
+3) run ./era40_rearrange.sh to:
+  
+   split `output.nc' into multiple files,
+
+   convert and rename variables to match the GCMs' 
+   nomenclature and units
+
+3.1) run ./era40_convert_soil.mois.sh to convert the output's soil 
+moisture variable to `mrsos' as in the GCMs.
+
+3.2) run ./era_convert_runoff.sh to convert the output's runoff variable
+to the runoff flux as in the GCMs.
+
+4) for `output2.nc' (which includes T(skin) and surface wind 
+components) run ./era40_rearrange2.sh.
+
+----------------------------------------------------------------------

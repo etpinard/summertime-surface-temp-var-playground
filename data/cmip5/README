@@ -1,0 +1,77 @@
+
+	Last update : November 11, 2013
+
+=====================================================================
+
+-) In ~/nobackup/data/cmip5/
+
+	# tas.cdf :  ensemble of 'tas' from 1969 to 1999 (historical run),
+							 at 2.5 deg x 2.5 deg resolution.
+
+	# tas_ymonvar.cdf : ensemble mean of monthly 'tas' variance from 1969 to
+											1999, at 2.5 deg x 2.5 deg resolution.
+	
+	# tas_ymonvar_1member.cdf : ensemble mean of monthly 'tas' variance 
+	                            from 1969 to 1999, 
+															at 2.5 deg x 2.5 deg resolution, 
+															1 member per model.
+	
+	#	ccsm4_tas.cdf : NCAR's CCSM4 'tas' 1969-1999, original resolution
+	
+	# hadgem2-es_tas.cdf : Hadley Centre's HadGEM2-Earth System 'tas' 
+												 1969-1999, original resolution
+
+	# {ccsm4,hadgem2-es}_tas_144x73.cdf : same as above, now on 2.5 deg
+																				by 2.5 deg resolution
+
+	Computation are made by :
+	
+	# ./cmip5_ensemble.sh (ensemble of 'tas' 1969-1999 ) 
+
+	# ./cmip5_Var_ensemble.sh (ensemble of monthly Var('tas'))
+	
+	# ./cmip5_Var_ensemble_1member.sh (ensemble of monthly Var('tas') 
+																		  1 member per model) 
+
+
+	# Complete list of models used in the ensemble is in models_list.txt
+
+	see @data_dargan :
+	/home/disk/pynchon/dargan/cmip5/historical/tas/2d/ 
+
+	** The GISS model had to have been taken out of the ensemble (done
+	in ./cmip5_ensemble.sh) as its year entries are not consistent with
+	the other member: years in [1850:1875] are repeated. Strange.
+
+----------------------------------------------------------------------
+
+
+Information about where to get CMIP 5 model variables
+
+-) Catalyst message board --> ../data_message_board.sh
+
+-) Monthly precipiation (pr_*) and evaporation (evspsbl_*) 
+	 for at least 36 different CMIP5 models. Most of them 
+	 for the entire 20th century, through some of them are only late 
+	 20th (e.g. 1976-2005).
+
+	 $ ssh pynchon
+	 /home/disk/pynchon/dargan/cmip5/historical/precip/2d/
+
+-) Surface radiation fluxes. For about 20 models.
+
+	 $ ssh pynchon
+	 /home/disk/pynchon/dargan/cmip5/historical/surf/2d/
+
+-) 2m temperature (tas_*). Less than 20 models.
+	 
+-) Surface temperature (all ensemble members)
+
+	Models (11): bcc, Can, CNRM, CSIRO, GISS-E2-R, HadCM3, HadGEM2, inm,
+	IPSL, MIROC, Nor Field: 
+
+	/home/disk/eos10/dargan/cmip5/historical/tas
+
+  /home/disk/pynchon/dargan/cmip5/historical/tas/2d/
+
+----------------------------------------------------------------------

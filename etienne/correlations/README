@@ -1,0 +1,87 @@
+
+Last update : March 01, 2013
+
+in ~/proj/etienne/correlations/
+
+Computes various correlations between the variable of the Toy Model.
+The year-to-year (i.e. summer-to-summer) wrapped around problem is not
+address in these procedures. Instead, month-to-month correlations are
+computed (as oppose to traditional "lag-distance" correlations).
+
+Notation: correlation functions are denoted as corr_""". 
+ 				  monthly correlation fields (or variables) as cor(lag)_""".
+ 				  summer-averaged correlation fields as Cor(lag)_""".
+ 	
+
+in ./subroutines/		
+
+-) corr_pairs.m compute correlations of a set of variables where
+	 the possible variable pairs are determined by combinatorics.
+
+-) corr_depind.m compute correlations of a set of variables with
+	 one fixed dependent variable seeking linearly related independent
+	 variable. 
+
+-) corr_pairs_plot.m plotting procedure for corr_pairs.m
+	 Makes use of plot_monthly.m and plot_summeravg.m
+
+-) corr_depind_plot.m plotting procedure for corr_depind.m.
+	 Makes use of plot_monthly.m and plot_summeravg.m
+
+---------------------------------------------------------------------
+
+in ./plots/
+
+-) corr_E_FPF0.m compute and plot correlations E to F,P,F_0
+	 in a 3 panel figure.
+
+	 and many more ...
+
+----------------------------------------------------------------------
+
+
+-) autolag.m compute the auto-correlation using cor_autolag.m 
+	 for a set of variables. 
+
+-) sfc_engy.m	compute correlations between the variables of the
+	 surface energy budget.
+
+-) soil_mois.m compute correlations between the variables of the
+	 soil moisture budget.
+
+-) forc_resp.m compute correlations between forcing functions and
+	 their respective responses.
+
+-) coupling_landatm.m compute correlations between T and m.
+	 Also, investigate what temperature variable (skin or surface air
+	 temperature) is best to use.
+
+-) coupling_soil.m compute and plots correlations of soil moisture
+	 between the top and bottom soil layers.
+
+-) param_E.m seeks the best parameterization for E.
+
+-) parar_H.m seeks the best parameterization for H.
+
+-) param_R.m seeks the best parameterization for R. 
+
+-) param_residual.m evaluates the behavior of E_00' and H_00', the
+	 surface energy parameterization residuals.
+
+-) control_E.m computes correlations between E, P, F and F0
+	 investigating the spatial distribution of "evaporation control"
+	 regimes.
+	
+-) residual_bias.m investigates if the regression residuals (i.e. the
+	 rejections) are correlated w.r.t. their original variables.
+
+-) infiltration.m has some checks regarding taurho, the soil moisture
+	 infiltration time scale. Computation is now made by inflt.m .
+
+-) albedo.m investigates correlations between the surface albedo and
+	 (among others) soil moisture.m
+
+-) skin_temp.m miscellaneous correlations involving the skin
+	 temperature.
+
+======================================================================

@@ -1,0 +1,19 @@
+
+Last update : June 27, 2013
+=====================================================================
+
+Information about the data and its variables
+	
+-) In ~/nobackup/data/hadgem1-a1b
+
+  2069-2099 (31 years as the 20th century GCM files to match the 
+  CCSM 3.0's outputs).
+
+
+	# The files are:
+
+	tas.cdf : Surface air temperature (2m) in Kelvin.
+
+	mrsos.cdf : Moisture in upper 0.1 m of soil column in kg m^-2.
+
+=====================================================================

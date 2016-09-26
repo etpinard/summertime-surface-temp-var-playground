@@ -1,0 +1,26 @@
+
+Last update : November 28, 2012
+
+in ~/proj/etienne/decompositions/
+
+Analysis of the variable decompositions in the toy model 
+equations. Investigation of the importance of the seasonal cycle,
+linearity and relative variability.
+
+
+-) seasonality.m checks the gain from decomposing in on monthly 
+	 basis compared to full summer decomposition. Especially intended
+	 for parameters alpha and e to attest their temporal behavior
+	 during summer.
+
+-) variability.m evaluates the variability of the monthly means 
+	 to the typical variability of around its mean.
+
+-) islinear.m computes "worst-case" coefficient of variations. 
+	 Intended for E and P ...
+
+
+-) check_tau.m verifies the magnitude of the residual in the 
+	 the temperature damping parameterization (H' = H_0' + kappa T').
+		*** this should be inside a new folder called regressions/.
+======================================================================

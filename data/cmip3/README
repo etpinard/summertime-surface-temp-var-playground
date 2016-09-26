@@ -1,0 +1,29 @@
+
+	Last update : November 11, 2013
+
+=====================================================================
+
+-) In ~/nobackup/data/cmip3/
+
+	# cmip3.mat : Var(T)_cmip3 / Var(T_obs) for 1969-1999
+
+The models used for the ensemble are :
+
+- Bjerknes Centre for Climate Research, Norway -  BCCR-BCM2.0
+- Canadian Centre for Climate Modelling & Analysis - CGCM3.1
+- Centre National de Recherches Meteorologiques, France - CNRM
+- National Center for Atmospheric Research, US - CCSM3
+- CSIRO Atmospheric Research, Australia - CSIRO3.5
+- Max Planck Institute for Meteorology, Germany - ECHAM5
+- Geophysical Fluid Dynamics Laboratory, US - GFDL2.0
+- Geophysical Fluid Dynamics Laboratory, US - GFDL2.1
+- Goddard Institute for Space Studies, US - GISS (ER)
+- Hadley Centre for Climate Prediction and Research - HadGEM1
+- Institute for Numerical Mathematics, Russia - INM-CM3.0
+- Institut Pierre Simon Laplace, France - IPSL-CM3
+- Meteorological Institute of the University of Bonn, Germany - MIUB
+- Meteorological Research Institute, Japan - MRI-CGCM2.3.2
+- National Center for Atmospheric Research, US - PCM1
+
+----------------------------------------------------------------------
+

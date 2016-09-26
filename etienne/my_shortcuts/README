@@ -1,0 +1,89 @@
+
+Last update : June 18, 2013
+	
+in ~/proj/etienne/my_shortcuts/
+
+Some very useful shortcurs.
+	
+	q.m : shortcut to exit MATLAB just like in the shell and in Vim.
+
+	sqz.m	: shortcut for MATLAB's squeeze command.
+
+	sqmean.m : Computes mean (column-wise) of 3D array then squeezes it
+	to 2 dimensions. (save a lot of typing ... )
+		--- This should probably be sqzmean for consistency instead ...
+	
+	ssn_rg.m : Computes the seasonal cycle range (i.e. August minus
+	June) for a Nmonth x Nlat x Nlon variable.
+
+	dtrnd.m : Generalized MATLAB's detrend function for 3D arrays with
+	NaN entries. (as of 03/27 there is much more inside).
+
+	make1d.m : Reshapes 3D or 2D array to a 1D vector.
+	
+	isthesame.m : Checks if 2 arrays contain the same value by
+	computing the maximum distance between their elements.
+
+	isinarray.m : Checks if value is contian in array. 
+
+	exist_all.m : Checks if all variables in string array exist.
+	*** Does not work. MATLAB can't check for existance inside a
+	function.
+
+	addsheet.m : Add a 'sheet' to an existing 2D or 3D array.
+
+	catsheet.m : Concatenate multiple arrays 2D array of different 
+	sizes using NaNs.
+
+	relabel.m : Relabel variable with an additional prefix.
+
+	xmonth.m : Expand an array with $Nmonth time entries to $Ntime
+	time entries e.g. repmat Xbar or sig_X to size of X.
+	
+	x2d.m : Expand a 2D array with to 3D with $Nmonth sheets.
+	e.g. x2d(sqmean(X)) has size of X.
+
+	resdown.m : Trim resolution 3D (time,lat,lon) array down to an
+	integer multiple of its current resolution.
+
+	my_interp2.m : Interpolate a 2D or 3D array in 2 dimensions from one
+	set of [lon,lat] to another.
+
+	my_sort.m : Sort 3D array in the first column (time) and find indices 
+	(consistent with input array).
+	
+	nansync.m : Synchronizes in 2 arrays of the same dimensions such
+	that non-NaN values are substituted out by corresponding numbers
+	where applicable.
+
+	makenan.m : Set all entries of an array to NaNs with respect to
+	some condition.
+
+	cos_weight.m : Weighs input X(time,lat,lon) by the cosine of
+	latitude.
+
+	max1d.m : Find maximum value in a 3D or 2D array.
+	 
+	min1d.m : Find minimum value in a 3D or 2D array.
+
+	mean1d.m : Find (nan) mean value in a 3D or 2D array.
+
+	std1d.m : Find the (nan) std of a 3D or 2D array. 
+
+	mystats.m : Displays the outputs of max1d, min1d, mean1d and std1d
+	
+	bias.m : Computes the relative two-sided bias of some field.
+
+	abias.m : Computes the relative one-sided bias of some field, that
+	is the absolute value of bias.m
+
+	abiaslog.m : Computes the logarithm of the relative one-sided bias
+	of some field. 
+
+	Var_expl.m : Computes the fraction of variance explained given 
+	the regression residual and the original variance.
+
+	rms.m : Computes the temporal root-mean-square of 1 variable or of a
+	difference of 2 variables.
+
+=====================================================================

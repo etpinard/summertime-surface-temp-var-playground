@@ -1,0 +1,42 @@
+
+Last update : July 19, 2012
+=====================================================================
+
+Information about the data and its variables
+	
+-) In ~/proj/data/gfdl21
+
+	All files have 144 grid points in longitudes and 90 in latitude
+	There are the monthly averaged data set from January 1970 to
+	December 2000 for a total of 372 time samples or 31 complete years.
+	The variables are stored as var(time,lat,lon). The lon vector ranges
+	in [0:360]. The lat vector is expressed in degrees north.
+
+	The files are:
+
+	tas.cdf : Surface air temperature in Kelvin units.
+
+	mrso.cdf : Total soil moisture content in kg m^-2.  Includes
+	subsurface frozen water but not surface snow and ice.
+
+	hfss.cdf : Surface sensible heat flux in W m^-2.
+
+	mrro.cdf : Surface and subsurface runoff (rate) in kg m^-2 s^-1.
+
+	pr.cdf : Precipitation (rate) in kg m^-2 s^-1. Includes all types
+	(rain, snow, large-scale convective, etc).
+
+	rlds.cdf : Surface downwelling longwave radiation in W m^-2.
+
+	rlus.cdf : Surface upwelling longwave radiation in W m^-2.
+
+	rsds.cdf : Surface downwelling shortwave radiation in W m^-2.
+	
+	rsds.cdf : Surface upwelling shortwave radiation in W m^-2.
+
+	cloud_20c3m.cdf : Total cloud fraction in percent.
+	
+	conv_precip_20c3m.cdf : Convective precipitation flux in 
+	kg m^-2 s^-1. Includes both liquid and solid phases.
+	
+=====================================================================

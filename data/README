@@ -1,0 +1,80 @@
+
+Last update : November 14, 2013
+
+
+All data files are now in ~/nobackup/
+
+All scripts are still in this parent directory, however.
+
+Soft links to the data folder have also been made.
+
+----------------------------------------------------------------------
+
+The folders are
+
+ccsm3/ : NCAR's CCSM 3.0, climate of th 20th century (1969-1999)
+
+ccsm3-a1b/ : NCAR's CCSM 3.0, SRES A1B (1970-2000)
+
+hadgem1/ : Hadley Centre's HadGEM1, climate of th 20th century
+            (1969-1999)
+
+hadgem1-a1b/ : Hadley Centre's HadGEM1, SRES A1B (1970-2000)
+
+obs/ : U. of Delaware observations
+
+ncep_doe/ : NCEP-DOE reanalysis II 
+
+era40/ : ERA-40 reanalysis
+
+gfld21/ : GFDL 2.1 (not used as its archives do not include 
+          the surface latent heat flux).
+
+cmip5/ : CMIP5 mulit-model ensemble 
+
+cmip3/ : CMIP3 mulit-model ensemble (from David)
+
+----------------------------------------------------------------------
+
+The scripts are
+
+data_message_board.sh : link to the atmos departement data message
+                        board.
+
+get_data.sh : link to IRIDL LDEO's CMIP3 data bank.
+
+----------------------------------------------------------------------
+
+Other CMIP3 models with 10 cm soil moisture: 
+
+  -) bccr_bcm2_0 (surface water content)
+
+  -) cccma_cgcm3_1 (both surface and total moisture content)
+
+  -) gfdl_cm2_0 & gfdl_cm2_1 (total soil moisture content)
+
+  -) giss_aom (total soil moisture)
+
+  -) giss_model_e_h & giss_model_e_r (surface and total soil moisture)
+
+  -) iap_fgoals1_0_g (surface and total soil moisture)
+
+  -) ingv_echam4 (surface and total soil moisture)
+
+  -) inmcm3_0 (surface and total soil moisture)
+
+  -) ipsl_cm4 (total soil moisture)
+
+  -) miroc3_2 (surface and total soil moisture)
+
+  -) miub_echo_g (total soil moisture)
+
+  -) mpi_echam5 (total soil moisture)
+
+  -) mri_cgcm2_3_2a (surface and total soil moisture)
+
+  -) ncar_pcm (total soil moisture)
+
+  -) ukmo_hadcm3 (surface and total soil moisture)
+
+----------------------------------------------------------------------

@@ -1,0 +1,73 @@
+
+Last Updated : April 15, 2013
+
+in ~/proj/etienne/scales 
+
+
+	I got to figure out a nice way to automate and organize
+	scale analysis on the governing equations ...
+
+	Notation: Ratio of variances Var(Y)/Var(X) 
+						(or stand. dev. ---> opt in startup.m) 
+						are denoted as scale_Y_X (and outputed as
+						scale_Y-X.{png,eps}) i.e. the scale of the anomalies.
+						***BUT THERE ARE NOT AT THE MOMEMNT
+						it is scale_Var_Y_Var_X instead (to do!)
+						***Also make codes for Xbar scaling ratios
+
+						I don't know what's best sig_X or Var_X
+						But I am leaning toward sig_X at the moment ...
+
+in ./subroutines/		
+
+-) compare.m computes the ratio of all possible pairs of variables in
+	 a given set of variable. Denominator is set to be the globally
+	 biggest term.
+	
+-) compare_min.m compute the ratio of a "small" variable to the
+	 pointwise minimum of a set of "big" variables.
+
+-) compare_plot.m plotting procedure for compare.m
+
+-) compare_min_plot.m	plotting precedure for compare_min.m
+
+---------------------------------------------------------------------
+
+in ./plots/
+
+-)	plot_scale_engy.m : plot_3panels with 
+		{ sig_(kappaT) , sig_(LE) , sig_(H0) } /sig_F , 
+	
+-)  plot_scale_mois.m : maybe ...
+
+----------------------------------------------------------------------
+
+	-) sfc_engy.m 
+	
+	-) tm_sfc_engy.m after H' decomposition
+	
+	-) soil_mois.m
+	
+	-) dervs.m
+
+	-) engy_forcing.m compares the mangitude of the surface energy
+		 forcing decomposition (F' = F_0' - alpha*P') 
+	
+	-) sensible.m compare the magnitude of two components of the damping
+		 term (H = Hs + Flu).
+
+	-) albedo.m compare the albedo variability to other components of F'
+
+	-) param_residual.m compares the magnitude of the E' and H'
+		 residuals (E_00' and H_00').
+
+	-) evapofrac.m how good is my approximation to the evaporative
+		 fraction?
+
+
+
+	-) misc.m old blocks of codes
+
+	-) checks.m old code from the now obsolete runoff/
+
+=====================================================================

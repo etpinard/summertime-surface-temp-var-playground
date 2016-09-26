@@ -1,0 +1,620 @@
+netcdf blh {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float blh(time, lat, lon) ;
+		blh:long_name = "Boundary layer height" ;
+		blh:units = "m" ;
+		blh:_FillValue = -32767.f ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Wed May 08 17:48:23 2013: cdo splitname tmp.output tmp.\n",
+			"Wed May 08 17:48:08 2013: cdo -b 32 delname,str,strd tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:47:36 2013: cdo -b 32 delname,ssr,ssrd tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:47:03 2013: cdo -b 32 delname,sshf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:37 2013: cdo -b 32 delname,slhf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:09 2013: cdo -b 32 delname,ro tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:40 2013: cdo -b 32 delname,cp,lsp tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:09 2013: cdo -b 32 chname,t2m,tas tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:48 2013: cdo -b 32 invertlat tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:28 2013: cdo -b 32 setgrid,/tmp/grid tmp.output /tmp/cdo_O\n",
+			"2013-04-30 20:26:26 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf e {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float e(time, lat, lon) ;
+		e:long_name = "Evaporation" ;
+		e:units = "m of water" ;
+		e:_FillValue = -32767.f ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Wed May 08 17:48:23 2013: cdo splitname tmp.output tmp.\n",
+			"Wed May 08 17:48:08 2013: cdo -b 32 delname,str,strd tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:47:36 2013: cdo -b 32 delname,ssr,ssrd tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:47:03 2013: cdo -b 32 delname,sshf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:37 2013: cdo -b 32 delname,slhf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:09 2013: cdo -b 32 delname,ro tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:40 2013: cdo -b 32 delname,cp,lsp tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:09 2013: cdo -b 32 chname,t2m,tas tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:48 2013: cdo -b 32 invertlat tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:28 2013: cdo -b 32 setgrid,/tmp/grid tmp.output /tmp/cdo_O\n",
+			"2013-04-30 20:26:26 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf hfls {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float hfls(time, lat, lon) ;
+		hfls:long_name = "surface upward latent heat flux" ;
+		hfls:units = "W m-2" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Wed May  8 17:46:54 2013: ncatted -O -a units,hfls,o,c,W m-2 hfls.cdf\n",
+			"Wed May  8 17:46:54 2013: ncatted -O -a long_name,hfls,o,c,surface upward latent heat flux hfls.cdf\n",
+			"Wed May 08 17:46:28 2013: cdo expr,hfls=-slhf/(6*60*60); tmp.output hfls.cdf\n",
+			"Wed May 08 17:46:09 2013: cdo -b 32 delname,ro tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:40 2013: cdo -b 32 delname,cp,lsp tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:09 2013: cdo -b 32 chname,t2m,tas tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:48 2013: cdo -b 32 invertlat tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:28 2013: cdo -b 32 setgrid,/tmp/grid tmp.output /tmp/cdo_O\n",
+			"2013-04-30 20:26:26 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf hfss {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float hfss(time, lat, lon) ;
+		hfss:long_name = "surface upward sensible heat flux" ;
+		hfss:units = "W m-2" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Wed May  8 17:47:21 2013: ncatted -O -a units,hfss,o,c,W m-2 hfss.cdf\n",
+			"Wed May  8 17:47:20 2013: ncatted -O -a long_name,hfss,o,c,surface upward sensible heat flux hfss.cdf\n",
+			"Wed May 08 17:46:55 2013: cdo expr,hfss=-sshf/(6*60*60); tmp.output hfss.cdf\n",
+			"Wed May 08 17:46:37 2013: cdo -b 32 delname,slhf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:09 2013: cdo -b 32 delname,ro tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:40 2013: cdo -b 32 delname,cp,lsp tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:09 2013: cdo -b 32 chname,t2m,tas tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:48 2013: cdo -b 32 invertlat tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:28 2013: cdo -b 32 setgrid,/tmp/grid tmp.output /tmp/cdo_O\n",
+			"2013-04-30 20:26:26 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf mrro {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float mrro(time, lat, lon) ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Wed May 08 17:46:00 2013: cdo expr,mrro=1000*ro/(24*60*60); tmp.output mrro.cdf\n",
+			"Wed May 08 17:45:40 2013: cdo -b 32 delname,cp,lsp tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:09 2013: cdo -b 32 chname,t2m,tas tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:48 2013: cdo -b 32 invertlat tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:28 2013: cdo -b 32 setgrid,/tmp/grid tmp.output /tmp/cdo_O\n",
+			"2013-04-30 20:26:26 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf mrsos {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float mrsos(time, lat, lon) ;
+		mrsos:long_name = "soil moisture content of the top 10 cm" ;
+		mrsos:units = "mm" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Wed May  8 18:09:34 2013: ncatted -O -a units,mrsos,o,c,mm mrsos.cdf\n",
+			"Wed May  8 18:09:33 2013: ncatted -O -a long_name,mrsos,o,c,soil moisture content of the top 10 cm mrsos.cdf\n",
+			"Wed May 08 18:09:26 2013: cdo expr,mrsos=70*swvl1+30*swvl2; /tmp/convert_sm mrsos.cdf\n",
+			"Wed May 08 18:09:14 2013: cdo merge swvl1.cdf swvl2.cdf /tmp/convert_sm\n",
+			"Wed May 08 17:48:23 2013: cdo splitname tmp.output tmp.\n",
+			"Wed May 08 17:48:08 2013: cdo -b 32 delname,str,strd tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:47:36 2013: cdo -b 32 delname,ssr,ssrd tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:47:03 2013: cdo -b 32 delname,sshf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:37 2013: cdo -b 32 delname,slhf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:09 2013: cdo -b 32 delname,ro tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:40 2013: cdo -b 32 delname,cp,lsp tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:09 2013: cdo -b 32 chname,t2m,tas tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:48 2013: cdo -b 32 invertlat tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:28 2013: cdo -b 32 setgrid,/tmp/grid tmp.output /tmp/cdo_O\n",
+			"2013-04-30 20:26:26 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf pr {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float pr(time, lat, lon) ;
+		pr:long_name = "precip. flux" ;
+		pr:units = "mm s-1" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Wed May  8 17:46:00 2013: ncatted -O -a units,pr,o,c,mm s-1 pr.cdf\n",
+			"Wed May  8 17:45:59 2013: ncatted -O -a long_name,pr,o,c,precip. flux pr.cdf\n",
+			"Wed May 08 17:45:30 2013: cdo expr,pr=1000*(cp+lsp)/(6*60*60); tmp.output pr.cdf\n",
+			"Wed May 08 17:45:09 2013: cdo -b 32 chname,t2m,tas tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:48 2013: cdo -b 32 invertlat tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:28 2013: cdo -b 32 setgrid,/tmp/grid tmp.output /tmp/cdo_O\n",
+			"2013-04-30 20:26:26 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf rlds {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float rlds(time, lat, lon) ;
+		rlds:units = "W m-2" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Wed May  8 17:48:23 2013: ncatted -O -a units,rlds,o,c,W m-2 rlds.cdf\n",
+			"Wed May 08 17:48:01 2013: cdo expr,rlds=strd/(6*60*60); tmp.output rlds.cdf\n",
+			"Wed May 08 17:47:36 2013: cdo -b 32 delname,ssr,ssrd tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:47:03 2013: cdo -b 32 delname,sshf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:37 2013: cdo -b 32 delname,slhf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:09 2013: cdo -b 32 delname,ro tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:40 2013: cdo -b 32 delname,cp,lsp tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:09 2013: cdo -b 32 chname,t2m,tas tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:48 2013: cdo -b 32 invertlat tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:28 2013: cdo -b 32 setgrid,/tmp/grid tmp.output /tmp/cdo_O\n",
+			"2013-04-30 20:26:26 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf rlus {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float rlus(time, lat, lon) ;
+		rlus:units = "W m-2" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Wed May  8 17:48:22 2013: ncatted -O -a units,rlus,o,c,W m-2 rlus.cdf\n",
+			"Wed May 08 17:47:53 2013: cdo expr,rlus=(strd-str)/(6*60*60); tmp.output rlus.cdf\n",
+			"Wed May 08 17:47:36 2013: cdo -b 32 delname,ssr,ssrd tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:47:03 2013: cdo -b 32 delname,sshf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:37 2013: cdo -b 32 delname,slhf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:09 2013: cdo -b 32 delname,ro tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:40 2013: cdo -b 32 delname,cp,lsp tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:09 2013: cdo -b 32 chname,t2m,tas tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:48 2013: cdo -b 32 invertlat tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:28 2013: cdo -b 32 setgrid,/tmp/grid tmp.output /tmp/cdo_O\n",
+			"2013-04-30 20:26:26 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf rsds {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float rsds(time, lat, lon) ;
+		rsds:units = "W m-2" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Wed May  8 17:47:53 2013: ncatted -O -a units,rsds,o,c,W m-2 rsds.cdf\n",
+			"Wed May 08 17:47:29 2013: cdo expr,rsds=ssrd/(6*60*60); tmp.output rsds.cdf\n",
+			"Wed May 08 17:47:03 2013: cdo -b 32 delname,sshf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:37 2013: cdo -b 32 delname,slhf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:09 2013: cdo -b 32 delname,ro tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:40 2013: cdo -b 32 delname,cp,lsp tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:09 2013: cdo -b 32 chname,t2m,tas tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:48 2013: cdo -b 32 invertlat tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:28 2013: cdo -b 32 setgrid,/tmp/grid tmp.output /tmp/cdo_O\n",
+			"2013-04-30 20:26:26 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf rsus {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float rsus(time, lat, lon) ;
+		rsus:units = "W m-2" ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Wed May  8 17:47:52 2013: ncatted -O -a units,rsus,o,c,W m-2 rsus.cdf\n",
+			"Wed May 08 17:47:21 2013: cdo expr,rsus=(ssrd-ssr)/(6*60*60); tmp.output rsus.cdf\n",
+			"Wed May 08 17:47:03 2013: cdo -b 32 delname,sshf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:37 2013: cdo -b 32 delname,slhf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:09 2013: cdo -b 32 delname,ro tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:40 2013: cdo -b 32 delname,cp,lsp tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:09 2013: cdo -b 32 chname,t2m,tas tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:48 2013: cdo -b 32 invertlat tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:28 2013: cdo -b 32 setgrid,/tmp/grid tmp.output /tmp/cdo_O\n",
+			"2013-04-30 20:26:26 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf swvl1 {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float swvl1(time, lat, lon) ;
+		swvl1:long_name = "Volumetric soil water layer 1" ;
+		swvl1:units = "m**3 m**-3" ;
+		swvl1:_FillValue = -32767.f ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Wed May 08 17:48:23 2013: cdo splitname tmp.output tmp.\n",
+			"Wed May 08 17:48:08 2013: cdo -b 32 delname,str,strd tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:47:36 2013: cdo -b 32 delname,ssr,ssrd tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:47:03 2013: cdo -b 32 delname,sshf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:37 2013: cdo -b 32 delname,slhf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:09 2013: cdo -b 32 delname,ro tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:40 2013: cdo -b 32 delname,cp,lsp tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:09 2013: cdo -b 32 chname,t2m,tas tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:48 2013: cdo -b 32 invertlat tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:28 2013: cdo -b 32 setgrid,/tmp/grid tmp.output /tmp/cdo_O\n",
+			"2013-04-30 20:26:26 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf swvl2 {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float swvl2(time, lat, lon) ;
+		swvl2:long_name = "Volumetric soil water layer 2" ;
+		swvl2:units = "m**3 m**-3" ;
+		swvl2:_FillValue = -32767.f ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Wed May 08 17:48:23 2013: cdo splitname tmp.output tmp.\n",
+			"Wed May 08 17:48:08 2013: cdo -b 32 delname,str,strd tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:47:36 2013: cdo -b 32 delname,ssr,ssrd tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:47:03 2013: cdo -b 32 delname,sshf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:37 2013: cdo -b 32 delname,slhf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:09 2013: cdo -b 32 delname,ro tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:40 2013: cdo -b 32 delname,cp,lsp tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:09 2013: cdo -b 32 chname,t2m,tas tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:48 2013: cdo -b 32 invertlat tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:28 2013: cdo -b 32 setgrid,/tmp/grid tmp.output /tmp/cdo_O\n",
+			"2013-04-30 20:26:26 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf tas {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float tas(time, lat, lon) ;
+		tas:long_name = "2 metre temperature" ;
+		tas:units = "K" ;
+		tas:_FillValue = -32767.f ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Wed May 08 17:48:23 2013: cdo splitname tmp.output tmp.\n",
+			"Wed May 08 17:48:08 2013: cdo -b 32 delname,str,strd tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:47:36 2013: cdo -b 32 delname,ssr,ssrd tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:47:03 2013: cdo -b 32 delname,sshf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:37 2013: cdo -b 32 delname,slhf tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:46:09 2013: cdo -b 32 delname,ro tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:40 2013: cdo -b 32 delname,cp,lsp tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:45:09 2013: cdo -b 32 chname,t2m,tas tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:48 2013: cdo -b 32 invertlat tmp.output /tmp/cdo_O\n",
+			"Wed May 08 17:44:28 2013: cdo -b 32 setgrid,/tmp/grid tmp.output /tmp/cdo_O\n",
+			"2013-04-30 20:26:26 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf ts {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float ts(time, lat, lon) ;
+		ts:long_name = "Soil temperature level 1" ;
+		ts:units = "K" ;
+		ts:_FillValue = -32767.f ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Mon May 13 15:06:54 2013: cdo splitname tmp.output2 tmp.\n",
+			"Mon May 13 15:06:41 2013: cdo -b 32 chname,stl1,ts tmp.output2 /tmp/cdo_O\n",
+			"Mon May 13 15:06:28 2013: cdo -b 32 invertlat tmp.output2 /tmp/cdo_O\n",
+			"Mon May 13 15:06:15 2013: cdo -b 32 setgrid,/tmp/grid tmp.output2 /tmp/cdo_O\n",
+			"2013-05-13 21:52:40 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf u10 {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float u10(time, lat, lon) ;
+		u10:long_name = "10 metre U wind component" ;
+		u10:units = "m s**-1" ;
+		u10:_FillValue = -32767.f ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Mon May 13 15:06:54 2013: cdo splitname tmp.output2 tmp.\n",
+			"Mon May 13 15:06:41 2013: cdo -b 32 chname,stl1,ts tmp.output2 /tmp/cdo_O\n",
+			"Mon May 13 15:06:28 2013: cdo -b 32 invertlat tmp.output2 /tmp/cdo_O\n",
+			"Mon May 13 15:06:15 2013: cdo -b 32 setgrid,/tmp/grid tmp.output2 /tmp/cdo_O\n",
+			"2013-05-13 21:52:40 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
+netcdf v10 {
+dimensions:
+	lon = 144 ;
+	lat = 73 ;
+	time = UNLIMITED ; // (372 currently)
+variables:
+	double lon(lon) ;
+		lon:long_name = "lon" ;
+		lon:units = "degrees_east" ;
+		lon:standard_name = "longitude" ;
+	double lat(lat) ;
+		lat:long_name = "lat" ;
+		lat:units = "degrees_north" ;
+		lat:standard_name = "latitude" ;
+	double time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00" ;
+		time:calendar = "standard" ;
+	float v10(time, lat, lon) ;
+		v10:long_name = "10 metre V wind component" ;
+		v10:units = "m s**-1" ;
+		v10:_FillValue = -32767.f ;
+
+// global attributes:
+		:CDI = "Climate Data Interface version 1.4.5 (http://code.zmaw.de/projects/cdi)" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Mon May 13 15:06:54 2013: cdo splitname tmp.output2 tmp.\n",
+			"Mon May 13 15:06:41 2013: cdo -b 32 chname,stl1,ts tmp.output2 /tmp/cdo_O\n",
+			"Mon May 13 15:06:28 2013: cdo -b 32 invertlat tmp.output2 /tmp/cdo_O\n",
+			"Mon May 13 15:06:15 2013: cdo -b 32 setgrid,/tmp/grid tmp.output2 /tmp/cdo_O\n",
+			"2013-05-13 21:52:40 GMT by mars2netcdf-0.92" ;
+		:CDO = "Climate Data Operators version 1.4.5 (http://code.zmaw.de/projects/cdo)" ;
+}
+
