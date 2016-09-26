@@ -8,7 +8,7 @@
 - `ettenne/`: scripts that make the MATLAB playground for exploring summertime
   surface temperature variability
 - `file_exchange/`: MATLAB file exchange libraries used in this project
-- `map/` and `m_map`: MATLAB geo mapping library used in this project
+- `map/` and `m_map/`: MATLAB geo mapping library used in this project
 
 ## Data
 
